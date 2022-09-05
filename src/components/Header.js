@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,7 +18,7 @@ const Header = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-between" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
               <a className="nav-link" href="#">
@@ -30,7 +30,15 @@ const Header = () => {
                 About
               </a>
             </li>
+           
             
+          </ul>
+          <ul className='navbar-nav'>
+          <li className="nav-item align-self-end border rounded" onClick={props.toggle}>
+              <a className="nav-link" href="#">
+                Toggle Mode
+              </a>
+            </li>
           </ul>
         </div>
       </nav>

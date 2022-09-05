@@ -20,6 +20,7 @@ const getItemsFromLS = () =>{
 
 function App() {
   const [todos, setTodos] = useState(getItemsFromLS())
+  const [mode, setMode] = useState(false)
 
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos));
@@ -35,14 +36,24 @@ function App() {
     setTodos(todos.filter((item)=>{
       return item.todoTitle !== title
     }))
-  } 
+  }
+
+  const handleToggle = () =>{
+    if(mode){
+      document.body.style.backgroundColor='white'
+    }else{
+      document.body.style.backgroundColor='#a8a8a8'
+    }
+    
+    setMode(!mode)
+  }
 
   return <div>
-    <Header/>
-    <Form addTodo={submitTodo}/>
-    <TodoList todos={todos} del={del}/>
-    <Footer/>
-  </div>
+            <Header mode={mode} toggle={handleToggle}/>
+            <Form addTodo={submitTodo}/>
+            <TodoList todos={todos} del={del}/>
+            <Footer/>
+          </div>
 }
 
 export default App;

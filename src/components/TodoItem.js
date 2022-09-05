@@ -13,7 +13,7 @@ const TodoItem = (props) => {
     >
       <div>
   <h6>{props.index+1}- {props.title}</h6>
-        <span style={{ color: "gray" }}>{props.detail}</span>
+        <span style={{ color: "#413f3f" }}>{props.detail}</span>
       </div>
 
       <button type="button" className="close" onClick={()=>props.del(props.title)}>
