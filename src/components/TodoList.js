@@ -6,7 +6,7 @@ const TodoList = (props) => {
         props.del(title)
     }
     return (
-        <ul className="list-group" style={{width: "40%", margin: "0px auto",listStyle:'none'}}>
+        <ul className="list-group mb-5" style={{width: "40%", margin: "0px auto",listStyle:'none'}}>
             {
                 props.todos.length>0?props.todos.map((item,i)=>{
                     return <TodoItem key={i} index={i} title={item.todoTitle} detail={item.todoDetail} del={del}/>
